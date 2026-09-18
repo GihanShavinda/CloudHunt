@@ -1,0 +1,40 @@
+# CloudHunt single-host dev stack. Postgres/Neo4j/Redis are declared now so the
+# topology is stable; they are actively used from Milestone 2 onward.
+services:
+  api:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile
+    env_file: .env
+    environment:
+      CLOUDHUNT_DATABASE_URL: postgresql://cloudhunt:cloudhunt@postgres:5432/cloudhunt
+      CLOUDHUNT_REDIS_URL: redis://redis:6379/0
+      CLOUDHUNT_NEO4J_URI: bolt://neo4j:7687
+    ports: ["8000:8000"]
+    depends_on: [postgres, neo4j, redis]
+
+  postgres:
+    image: postgres:16
+    env_file: .env
+    ports: ["5433:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+  neo4j:
+    image: neo4j:5
+    env_file: .env
+    ports: ["7474:7474", "7687:7687"]
+    volumes: ["neo4jdata:/data"]
+
+  redis:
+    image: redis:7
+    ports: ["6380:6379"]
+
+  localstack:
+    image: localstack/localstack:3
+    environment:
+      - SERVICES=cloudtrail,s3,sqs,iam
+    ports: ["4566:4566"]
+
+volumes:
+  pgdata:
+  neo4jdata:

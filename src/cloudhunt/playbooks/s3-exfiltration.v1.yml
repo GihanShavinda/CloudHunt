@@ -1,0 +1,11 @@
+id: PB-S3-001
+version: "1.0.0"
+title: S3 data access and exfiltration triage
+detection_types: ["s3-volume-anomaly", "s3-cross-region-access", "s3-sensitive-public-access"]
+attack_ids: ["T1530", "T1537"]
+action_names: ["quarantine-principal"]
+steps:
+  - Preserve GetObject event ids, byte counts, regions, and bucket identifiers.
+  - Compare observed access with the principal baseline and approved workloads.
+  - Validate sensitive-bucket public access configuration changes.
+  - Contain the principal if the activity is unauthorised.

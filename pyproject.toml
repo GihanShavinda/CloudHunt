@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloudhunt"
+version = "0.1.0"
+description = "Agentless AWS Cloud Threat Detection & Response with IAM privilege-escalation path analysis"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.6",
+    "python-multipart>=0.0.9",   # OAuth2 form login
+    "PyJWT>=2.7",
+    "bcrypt>=4.1",
+    "pyotp>=2.9",
+    "boto3>=1.34",
+    "PyYAML>=6.0",               # Sigma-style rules (Milestone 4)
+    "neo4j>=5.14",               # identity-graph projection (Milestone 2)
+    "psycopg[binary]>=3.2",       # optional PostgreSQL operational persistence (P12)
+    "redis>=5.0",                 # optional operational state/cache adapter (P12)
+    "reportlab>=4.2",             # deterministic PDF incident export (P12)
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",               # FastAPI TestClient
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cloudhunt = ["rules/*.yml", "rules/*.yaml", "playbooks/*.yml", "playbooks/*.yaml", "playbooks/*.md"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

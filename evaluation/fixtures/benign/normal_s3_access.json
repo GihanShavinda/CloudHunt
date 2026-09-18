@@ -1,0 +1,256 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-11T03:00:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs310",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-11T03:01:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs311",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-11T03:02:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs312",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-12T03:00:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs320",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-12T03:01:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs321",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-12T03:02:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs322",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-13T03:00:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs330",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-13T03:01:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs331",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-13T03:02:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bs332",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/backup"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 1048576
+      }
+    }
+  ]
+}

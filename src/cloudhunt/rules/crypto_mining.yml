@@ -1,0 +1,28 @@
+title: GPU/large EC2 launched in an unusual region (possible crypto-mining)
+id: ec2-cryptomining-launch
+description: >
+  Fires when RunInstances requests a GPU or very large instance type in a region
+  outside the organisation's normal footprint. Attackers who obtain credentials
+  frequently spin up expensive GPU fleets for mining in seldom-used regions to
+  delay discovery.
+  LOGIC: derived.gpu_or_large_instance flags GPU families (p*/g*/inf/trn/...) and
+  large sizes (*xlarge/metal); the filter suppresses the org's home regions, so
+  the rule fires only on unusual-region launches (selection and not filter).
+  FP TRAPS: legitimate ML/HPC workloads; a new region being adopted (update the
+  home-region filter). Tune the home-region list per organisation.
+attack: T1496
+confidence: 0.7
+level: high
+logsource: {product: aws, service: ec2}
+detection:
+  selection:
+    event: RunInstances
+    derived.gpu_or_large_instance: true
+  filter:
+    region:
+      - us-east-1
+      - us-west-2
+  condition: selection and not filter
+falsepositives:
+  - Sanctioned ML/HPC workloads
+  - Newly adopted region not yet in the home-region list

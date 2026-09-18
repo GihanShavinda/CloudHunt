@@ -1,0 +1,25 @@
+title: Cloud logging or threat-detection disabled
+id: ct-logging-tampering
+description: >
+  Fires when a principal stops/deletes a CloudTrail trail or deletes a GuardDuty
+  detector. Turning off audit logging or detection is a hallmark of an attacker
+  covering their tracks, and is rarely a routine API call.
+  LOGIC: match the destructive control-plane action by name.
+  FP TRAPS: legitimate trail/detector teardown during account decommissioning or
+  IaC (Terraform/CloudFormation) refactors; a multi-region trail being replaced.
+  Correlate with the actor (automation vs human) and change windows before acting.
+attack: T1562.008
+confidence: 0.9
+level: high
+logsource: {product: aws}
+detection:
+  selection:
+    event:
+      - StopLogging
+      - DeleteTrail
+      - UpdateTrail
+      - DeleteDetector
+  condition: selection
+falsepositives:
+  - Planned trail/detector teardown or IaC replacement
+  - Log pipeline migration

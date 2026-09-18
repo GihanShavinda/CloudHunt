@@ -1,0 +1,11 @@
+id: PB-LOG-001
+version: "1.0.0"
+title: CloudTrail logging tampering response
+detection_types: ["ct-stop-logging", "ct-delete-trail", "logging-tampering"]
+attack_ids: ["T1562.008"]
+action_names: ["re-enable-logging"]
+steps:
+  - Preserve the tampering event and actor identity.
+  - Verify trail configuration and organisation-level logging state.
+  - Re-enable logging through the approved human-gated action.
+  - Review activity during the visibility gap.

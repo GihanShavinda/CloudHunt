@@ -1,0 +1,9 @@
+{
+  "principal": "arn:aws:iam::111122223333:user/alice",
+  "baseline_days": [
+    {"day": 0, "count": 10, "bytes_each": 1048576, "region": "us-east-1"},
+    {"day": 1, "count": 12, "bytes_each": 1048576, "region": "us-east-1"},
+    {"day": 2, "count": 11, "bytes_each": 1048576, "region": "us-east-1"}
+  ],
+  "sensitive_bucket": "patient-records"
+}

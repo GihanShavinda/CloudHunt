@@ -1,0 +1,185 @@
+{
+  "account": "111122223333",
+
+  "managed_policies": [
+    {
+      "arn": "arn:aws:iam::111122223333:policy/AdminAccess",
+      "name": "AdminAccess",
+      "document": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {"Sid": "Admin", "Effect": "Allow", "Action": "*", "Resource": "*"}
+        ]
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:policy/ReadOnlyS3",
+      "name": "ReadOnlyS3",
+      "document": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {"Sid": "ReadS3", "Effect": "Allow",
+           "Action": ["s3:Get*", "s3:List*"], "Resource": "*"}
+        ]
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:policy/BoundaryS3Only",
+      "name": "BoundaryS3Only",
+      "document": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {"Sid": "OnlyS3", "Effect": "Allow", "Action": "s3:*", "Resource": "*"}
+        ]
+      }
+    }
+  ],
+
+  "groups": [
+    {
+      "arn": "arn:aws:iam::111122223333:group/developers",
+      "name": "developers",
+      "inline_policies": {
+        "dev-inline": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {"Effect": "Allow", "Action": "s3:PutObject",
+             "Resource": "arn:aws:s3:::acme-public-assets/*"}
+          ]
+        }
+      }
+    }
+  ],
+
+  "users": [
+    {
+      "arn": "arn:aws:iam::111122223333:user/alice",
+      "name": "alice",
+      "tags": {"Team": "data"},
+      "attached_managed_policies": ["arn:aws:iam::111122223333:policy/ReadOnlyS3"],
+      "groups": ["developers"]
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/bob",
+      "name": "bob",
+      "permission_boundary": "arn:aws:iam::111122223333:policy/BoundaryS3Only",
+      "inline_policies": {
+        "bob-inline": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {"Effect": "Allow", "Action": "iam:CreatePolicyVersion",
+             "Resource": "arn:aws:iam::111122223333:policy/*"},
+            {"Effect": "Allow", "Action": "s3:GetObject",
+             "Resource": "arn:aws:s3:::acme-crown-jewels/*"}
+          ]
+        }
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/carol",
+      "name": "carol",
+      "attached_managed_policies": ["arn:aws:iam::111122223333:policy/AdminAccess"],
+      "inline_policies": {
+        "carol-deny": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {"Effect": "Deny", "Action": "cloudtrail:StopLogging", "Resource": "*"}
+          ]
+        }
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/dave",
+      "name": "dave",
+      "inline_policies": {
+        "dave-inline": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {"Effect": "Allow", "NotAction": ["s3:DeleteObject"],
+             "Resource": "arn:aws:s3:::acme-public-assets/*"}
+          ]
+        }
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/erin",
+      "name": "erin",
+      "inline_policies": {
+        "erin-inline": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {"Effect": "Allow", "Action": "s3:GetObject",
+             "Resource": "arn:aws:s3:::acme-crown-jewels/*",
+             "Condition": {"Bool": {"aws:MultiFactorAuthPresent": "true"}}}
+          ]
+        }
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/ci-bot",
+      "name": "ci-bot",
+      "tags": {"Automation": "true"},
+      "inline_policies": {
+        "cibot-assume": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {"Effect": "Allow", "Action": "sts:AssumeRole",
+             "Resource": "arn:aws:iam::111122223333:role/deploy"}
+          ]
+        }
+      }
+    }
+  ],
+
+  "roles": [
+    {
+      "arn": "arn:aws:iam::111122223333:role/deploy",
+      "name": "deploy",
+      "tags": {"Team": "platform"},
+      "trust_policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {"Effect": "Allow",
+           "Principal": {"AWS": "arn:aws:iam::111122223333:user/ci-bot"},
+           "Action": "sts:AssumeRole"}
+        ]
+      },
+      "inline_policies": {
+        "deploy-inline": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {"Effect": "Allow",
+             "Action": ["s3:GetObject", "iam:CreatePolicyVersion"],
+             "Resource": [
+               "arn:aws:s3:::acme-crown-jewels/*",
+               "arn:aws:iam::111122223333:policy/*"
+             ]}
+          ]
+        }
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:role/external-backup",
+      "name": "external-backup",
+      "trust_policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {"Effect": "Allow",
+           "Principal": {"AWS": "arn:aws:iam::999988887777:root"},
+           "Action": "sts:AssumeRole"}
+        ]
+      }
+    }
+  ],
+
+  "resources": [
+    {"arn": "arn:aws:s3:::acme-crown-jewels", "type": "AWS::S3::Bucket",
+     "tags": {"Sensitivity": "high", "DataClass": "pii"}},
+    {"arn": "arn:aws:s3:::acme-public-assets", "type": "AWS::S3::Bucket",
+     "tags": {"Sensitivity": "low"}},
+    {"arn": "arn:aws:iam::111122223333:policy/deploy-policy", "type": "AWS::IAM::Policy",
+     "tags": {"Sensitivity": "medium"}},
+    {"arn": "arn:aws:cloudtrail:us-east-1:111122223333:trail/org-trail",
+     "type": "AWS::CloudTrail::Trail", "tags": {"Sensitivity": "high"}}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:00:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListUsers",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/security-admin",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bia0",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:05:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetAccountAuthorizationDetails",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/security-admin",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "bia1",
+      "readOnly": true,
+      "requestParameters": {}
+    }
+  ]
+}

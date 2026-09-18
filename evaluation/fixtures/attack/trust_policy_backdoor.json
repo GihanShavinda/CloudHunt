@@ -1,0 +1,30 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:00:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "UpdateAssumeRolePolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "tp0",
+      "readOnly": false,
+      "requestParameters": {
+        "roleName": "deploy",
+        "policyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"AWS\": \"*\"}, \"Action\": \"sts:AssumeRole\"}]}"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:iam::111122223333:role/deploy"
+        }
+      ]
+    }
+  ]
+}

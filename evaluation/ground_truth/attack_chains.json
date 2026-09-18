@@ -1,0 +1,48 @@
+{
+  "compromised-key": {
+    "expected_actions": [
+      "GetCallerIdentity",
+      "ListRoles",
+      "ListPolicies",
+      "ListBuckets",
+      "AssumeRole"
+    ]
+  },
+  "iam-privesc": {
+    "expected_actions": [
+      "AssumeRole",
+      "PassRole",
+      "CreateFunction",
+      "InvokeFunction"
+    ]
+  },
+  "assume-role-chain": {
+    "expected_actions": [
+      "AssumeRole",
+      "AssumeRole",
+      "AssumeRole"
+    ]
+  },
+  "s3-exfiltration": {
+    "expected_actions": [
+      "ListBucket",
+      "GetObject"
+    ]
+  },
+  "defense-evasion": {
+    "expected_actions": [
+      "StopLogging"
+    ]
+  },
+  "trust-policy-backdoor": {
+    "expected_actions": [
+      "UpdateAssumeRolePolicy"
+    ]
+  },
+  "benign-automation": {
+    "expected_actions": [
+      "ListBuckets",
+      "AssumeRole"
+    ]
+  }
+}

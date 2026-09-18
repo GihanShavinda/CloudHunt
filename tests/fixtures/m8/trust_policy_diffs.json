@@ -1,0 +1,29 @@
+{
+  "account": "111122223333",
+  "role": "arn:aws:iam::111122223333:role/AppRole",
+  "safe_before": {
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Effect": "Allow",
+      "Principal": {"AWS": "arn:aws:iam::444455556666:root"},
+      "Action": "sts:AssumeRole",
+      "Condition": {"StringEquals": {"sts:ExternalId": "vendor-123"}}
+    }]
+  },
+  "condition_dropped_after": {
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Effect": "Allow",
+      "Principal": {"AWS": "arn:aws:iam::444455556666:root"},
+      "Action": "sts:AssumeRole"
+    }]
+  },
+  "wildcard_after": {
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Effect": "Allow",
+      "Principal": {"AWS": "*"},
+      "Action": "sts:AssumeRole"
+    }]
+  }
+}

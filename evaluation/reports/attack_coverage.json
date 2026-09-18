@@ -1,0 +1,64 @@
+[
+  {
+    "technique_id": "T1078.004",
+    "technique_name": "T1078.004",
+    "scenarios": [
+      "assume-role-chain",
+      "compromised-key",
+      "defense-evasion",
+      "iam-privesc",
+      "s3-exfiltration",
+      "trust-policy-backdoor"
+    ],
+    "number_of_detections": 6
+  },
+  {
+    "technique_id": "T1098",
+    "technique_name": "T1098",
+    "scenarios": [
+      "iam-privesc",
+      "trust-policy-backdoor"
+    ],
+    "number_of_detections": 2
+  },
+  {
+    "technique_id": "T1098.003",
+    "technique_name": "T1098.003",
+    "scenarios": [
+      "trust-policy-backdoor"
+    ],
+    "number_of_detections": 1
+  },
+  {
+    "technique_id": "T1530",
+    "technique_name": "T1530",
+    "scenarios": [
+      "s3-exfiltration"
+    ],
+    "number_of_detections": 1
+  },
+  {
+    "technique_id": "T1537",
+    "technique_name": "T1537",
+    "scenarios": [
+      "s3-exfiltration"
+    ],
+    "number_of_detections": 1
+  },
+  {
+    "technique_id": "T1562.008",
+    "technique_name": "T1562.008",
+    "scenarios": [
+      "defense-evasion"
+    ],
+    "number_of_detections": 1
+  },
+  {
+    "technique_id": "T1580",
+    "technique_name": "T1580",
+    "scenarios": [
+      "compromised-key"
+    ],
+    "number_of_detections": 1
+  }
+]

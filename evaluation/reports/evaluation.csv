@@ -1,0 +1,8 @@
+scenario,passed,duration_ms,precision,recall,f1,false_positive_rate,correlation_score,privesc_path_score,chain_accuracy,safety_violations
+compromised-key,True,14.005,1.0,1.0,1.0,0.0,1.0,0.0,1.0,0
+iam-privesc,True,14.487,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,1.0,0
+assume-role-chain,True,15.908,1.0,1.0,1.0,0.0,1.0,0.0,1.0,0
+s3-exfiltration,True,21.898,0.5,1.0,0.6666666666666666,1.0,1.0,0.0,0.0645,0
+defense-evasion,True,17.969,0.5,1.0,0.6666666666666666,1.0,1.0,0.0,1.0,0
+trust-policy-backdoor,True,19.531,0.25,1.0,0.4,1.0,1.0,0.0,1.0,0
+benign-automation,True,13.829,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0

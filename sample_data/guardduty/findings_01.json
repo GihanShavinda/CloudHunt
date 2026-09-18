@@ -1,0 +1,44 @@
+{
+  "Findings": [
+    {
+      "SchemaVersion": "2.0",
+      "AccountId": "111122223333",
+      "Region": "us-east-1",
+      "Type": "UnauthorizedAccess:IAMUser/MaliciousIPCaller.Custom",
+      "Id": "finding-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "Severity": 8.0,
+      "CreatedAt": "2026-09-10T03:21:20Z",
+      "UpdatedAt": "2026-09-10T03:21:30Z",
+      "Title": "API CreatePolicyVersion was invoked from a known malicious IP address.",
+      "Resource": {
+        "ResourceType": "AccessKey",
+        "AccessKeyDetails": {
+          "AccessKeyId": "AKIAEXAMPLE0001",
+          "PrincipalId": "AIDAEXAMPLE0001",
+          "UserType": "IAMUser",
+          "UserName": "ci-bot"
+        }
+      },
+      "Service": {
+        "ServiceName": "guardduty",
+        "EventFirstSeen": "2026-09-10T03:20:10Z",
+        "EventLastSeen": "2026-09-10T03:21:30Z",
+        "Count": 3,
+        "Action": {
+          "ActionType": "AWS_API_CALL",
+          "AwsApiCallAction": {
+            "Api": "CreatePolicyVersion",
+            "ServiceName": "iam.amazonaws.com",
+            "CallerType": "Remote IP",
+            "RemoteIpDetails": {
+              "IpAddressV4": "185.220.101.5",
+              "Organization": {"Asn": "205100", "AsnOrg": "Example Hosting"},
+              "Country": {"CountryName": "Germany"},
+              "City": {"CityName": "Berlin"}
+            }
+          }
+        }
+      }
+    }
+  ]
+}

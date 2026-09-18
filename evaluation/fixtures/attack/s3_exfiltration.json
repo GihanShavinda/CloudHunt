@@ -1,0 +1,869 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:00:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBucket",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s3l",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels"
+        }
+      ]
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:01:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s31",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-1"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:02:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s32",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-2"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:03:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s33",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-3"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:04:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s34",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-4"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:05:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s35",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-5"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:06:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s36",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-6"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:07:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s37",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-7"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:08:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s38",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-8"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:09:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s39",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-9"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:10:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s310",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-10"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:11:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s311",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-11"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:12:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s312",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-12"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:13:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s313",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-13"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:14:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s314",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-14"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:15:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s315",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-15"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:16:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s316",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-16"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:17:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s317",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-17"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:18:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s318",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-18"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:19:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s319",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-19"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:20:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s320",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-20"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:21:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s321",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-21"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:22:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s322",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-22"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:23:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s323",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-23"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:24:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s324",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-24"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:25:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s325",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-25"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:26:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s326",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-26"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:27:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s327",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-27"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:28:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s328",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-28"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:29:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s329",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-29"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:30:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "s330",
+      "readOnly": true,
+      "requestParameters": {
+        "bucketName": "acme-crown-jewels"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:s3:::acme-crown-jewels/object-30"
+        }
+      ],
+      "additionalEventData": {
+        "bytesTransferred": 6291456
+      }
+    }
+  ]
+}

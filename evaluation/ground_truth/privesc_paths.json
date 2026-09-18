@@ -1,0 +1,10 @@
+{
+  "iam-privesc": {
+    "source": "arn:aws:iam::111122223333:user/analyst",
+    "target": "arn:aws:iam::111122223333:role/ci-deployer",
+    "expected_techniques": [
+      "AssumeRole",
+      "AttachRolePolicy"
+    ]
+  }
+}

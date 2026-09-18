@@ -1,0 +1,16 @@
+{
+  "principals": [
+    {"arn": "arn:aws:iam::111122223333:user/ci-bot", "type": "user",
+     "tags": {"Team": "ci", "Automation": "true"}},
+    {"arn": "arn:aws:iam::111122223333:role/deploy", "type": "role",
+     "tags": {"Team": "platform"}}
+  ],
+  "resources": [
+    {"arn": "arn:aws:s3:::acme-crown-jewels", "type": "AWS::S3::Bucket",
+     "tags": {"Sensitivity": "high", "DataClass": "pii"}},
+    {"arn": "arn:aws:s3:::acme-public-assets", "type": "AWS::S3::Bucket",
+     "tags": {"Sensitivity": "low"}},
+    {"arn": "arn:aws:iam::111122223333:policy/deploy-policy", "type": "AWS::IAM::Policy",
+     "tags": {"Sensitivity": "medium"}}
+  ]
+}

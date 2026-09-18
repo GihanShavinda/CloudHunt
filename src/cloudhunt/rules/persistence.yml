@@ -1,0 +1,68 @@
+title: New IAM user created
+id: iam-create-user
+description: >
+  Fires on CreateUser. Standing up a fresh IAM user is a durable persistence
+  mechanism (a backdoor identity that survives credential rotation on the
+  original principal).
+  LOGIC: match CreateUser by name.
+  FP TRAPS: legitimate onboarding / IaC-managed users. Strongly suspicious when
+  performed by an automation principal or from a new geo (Layer 2 will add that).
+attack: T1136.003
+confidence: 0.6
+level: medium
+logsource: {product: aws, service: iam}
+detection:
+  selection:
+    event: CreateUser
+  condition: selection
+falsepositives:
+  - Routine user onboarding
+  - IaC-managed IAM users
+---
+title: New long-term credentials or console login profile created
+id: iam-add-credentials
+description: >
+  Fires on CreateAccessKey or CreateLoginProfile. Adding an access key or a
+  console password to an identity is the classic "additional cloud credentials"
+  persistence step, especially when done to an existing/service identity.
+  LOGIC: match the credential-creation actions by name.
+  FP TRAPS: a user rotating their own access key; help-desk resetting a console
+  password. Suspicious when the actor != the subject, or the subject is a service
+  principal that should never have a console login.
+attack: T1098.001
+confidence: 0.7
+level: high
+logsource: {product: aws, service: iam}
+detection:
+  selection:
+    event:
+      - CreateAccessKey
+      - CreateLoginProfile
+  condition: selection
+falsepositives:
+  - Self-service access-key rotation
+  - Help-desk console password reset
+---
+title: Role trust policy changed to add external principal
+id: iam-backdoor-trust
+description: >
+  Fires when UpdateAssumeRolePolicy or CreateRole introduces a trust for a
+  principal in a different account, or a wildcard principal. This is a stealthy
+  backdoor: a foreign account (or anyone) can now assume the role.
+  LOGIC: derived.external_trust_added parses the (assume-role) policy document and
+  compares each Principal.AWS account to this account; wildcard also fires.
+  FP TRAPS: intentional cross-account access to a *known partner/vendor* account.
+  Maintain an allowlist of expected external account ids to suppress those.
+attack: T1098.003
+confidence: 0.85
+level: high
+logsource: {product: aws, service: iam}
+detection:
+  selection:
+    event:
+      - UpdateAssumeRolePolicy
+      - CreateRole
+    derived.external_trust_added: true
+  condition: selection
+falsepositives:
+  - Sanctioned cross-account trust to a known partner account (use an allowlist)

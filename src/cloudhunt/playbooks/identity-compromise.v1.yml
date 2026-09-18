@@ -1,0 +1,11 @@
+id: PB-IAM-001
+version: "1.0.0"
+title: Compromised IAM principal containment
+detection_types: ["iam-create-access-key", "iam-policy-change", "ct-update-assume-role-policy", "least-privilege-unused-permission", "new-privesc-path"]
+attack_ids: ["T1098", "T1098.001", "T1098.003", "T1548"]
+action_names: ["deactivate-access-key", "quarantine-principal", "revoke-sessions"]
+steps:
+  - Preserve relevant CloudTrail event ids and IAM graph paths.
+  - Validate whether credential or policy changes were authorised.
+  - Contain the affected principal using the approved response action.
+  - Recompute effective permissions and privilege-escalation paths after containment.

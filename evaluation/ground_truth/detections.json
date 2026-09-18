@@ -1,0 +1,43 @@
+{
+  "compromised-key": {
+    "attack": true,
+    "expected_rules": [
+      "bhv-new-geo",
+      "bhv-enumeration-burst"
+    ]
+  },
+  "iam-privesc": {
+    "attack": true,
+    "expected_rules": [
+      "bhv-automation-iam-write"
+    ]
+  },
+  "assume-role-chain": {
+    "attack": true,
+    "expected_rules": [
+      "bhv-new-geo"
+    ]
+  },
+  "s3-exfiltration": {
+    "attack": true,
+    "expected_rules": [
+      "m8-s3-exfil-anomaly"
+    ]
+  },
+  "defense-evasion": {
+    "attack": true,
+    "expected_rules": [
+      "ct-logging-tampering"
+    ]
+  },
+  "trust-policy-backdoor": {
+    "attack": true,
+    "expected_rules": [
+      "m8-backdoor-trust-policy"
+    ]
+  },
+  "benign-automation": {
+    "attack": false,
+    "expected_rules": []
+  }
+}

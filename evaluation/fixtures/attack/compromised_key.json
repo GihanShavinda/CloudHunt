@@ -1,0 +1,173 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:00:00Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "GetCallerIdentity",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck0",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:00:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListRoles",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck1",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:01:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListPolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck2",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:01:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck3",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:02:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetAccountAuthorizationDetails",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck4",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:02:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListUsers",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck5",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:03:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListGroups",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck6",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:04:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAttachedUserPolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck7",
+      "readOnly": true,
+      "requestParameters": {}
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:05:00Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "ck8",
+      "readOnly": false,
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::111122223333:role/deploy"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:iam::111122223333:role/deploy"
+        }
+      ]
+    }
+  ]
+}

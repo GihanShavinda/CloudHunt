@@ -1,0 +1,9 @@
+{
+  "defense-evasion": {
+    "action": "re-enable-logging",
+    "requires_human": true
+  },
+  "target": {
+    "unsafe_automatic_actions": 0
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "account": "111122223333",
+  "_comment": "Known-vulnerable config mirroring CloudGoat privesc scenarios. Ground-truth paths are asserted in tests/test_privesc.py.",
+
+  "managed_policies": [
+    {
+      "arn": "arn:aws:iam::111122223333:policy/AdministratorAccess",
+      "name": "AdministratorAccess",
+      "document": {
+        "Version": "2012-10-17",
+        "Statement": [{"Effect": "Allow", "Action": "*", "Resource": "*"}]
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:policy/cg-bilbo-policy",
+      "name": "cg-bilbo-policy",
+      "document": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {"Effect": "Allow",
+           "Action": [
+             "iam:CreatePolicyVersion", "iam:SetDefaultPolicyVersion",
+             "iam:GetPolicy", "iam:GetPolicyVersion", "iam:ListPolicyVersions",
+             "iam:ListAttachedUserPolicies"
+           ],
+           "Resource": "arn:aws:iam::111122223333:policy/cg-bilbo-policy"}
+        ]
+      }
+    }
+  ],
+
+  "users": [
+    {
+      "arn": "arn:aws:iam::111122223333:user/cg-bilbo",
+      "name": "cg-bilbo",
+      "attached_managed_policies": ["arn:aws:iam::111122223333:policy/cg-bilbo-policy"]
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/selfadmin",
+      "name": "selfadmin",
+      "inline_policies": {
+        "self": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "iam:AttachUserPolicy",
+           "Resource": "arn:aws:iam::111122223333:user/selfadmin"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/inliner",
+      "name": "inliner",
+      "inline_policies": {
+        "self": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "iam:PutUserPolicy",
+           "Resource": "arn:aws:iam::111122223333:user/inliner"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/dev-lambda",
+      "name": "dev-lambda",
+      "inline_policies": {
+        "lambda-passrole": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "iam:PassRole",
+           "Resource": "arn:aws:iam::111122223333:role/lambda-admin"},
+          {"Effect": "Allow", "Action": ["lambda:CreateFunction", "lambda:InvokeFunction"],
+           "Resource": "*"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/analyst",
+      "name": "analyst",
+      "inline_policies": {
+        "assume": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "sts:AssumeRole",
+           "Resource": "arn:aws:iam::111122223333:role/ci-deployer"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/pivot",
+      "name": "pivot",
+      "inline_policies": {
+        "assume": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "sts:AssumeRole",
+           "Resource": "arn:aws:iam::111122223333:role/mid"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/courier",
+      "name": "courier",
+      "inline_policies": {
+        "assume": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "sts:AssumeRole",
+           "Resource": "arn:aws:iam::111122223333:role/reader"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:user/readonly",
+      "name": "readonly",
+      "inline_policies": {
+        "ro": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "s3:GetObject",
+           "Resource": "arn:aws:s3:::cg-public/*"}
+        ]}
+      }
+    }
+  ],
+
+  "roles": [
+    {
+      "arn": "arn:aws:iam::111122223333:role/ci-deployer",
+      "name": "ci-deployer",
+      "trust_policy": {"Version": "2012-10-17", "Statement": [
+        {"Effect": "Allow",
+         "Principal": {"AWS": "arn:aws:iam::111122223333:user/analyst"},
+         "Action": "sts:AssumeRole"}
+      ]},
+      "inline_policies": {
+        "self-attach": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "iam:AttachRolePolicy",
+           "Resource": "arn:aws:iam::111122223333:role/ci-deployer"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:role/lambda-admin",
+      "name": "lambda-admin",
+      "trust_policy": {"Version": "2012-10-17", "Statement": [
+        {"Effect": "Allow", "Principal": {"Service": "lambda.amazonaws.com"},
+         "Action": "sts:AssumeRole"}
+      ]},
+      "attached_managed_policies": ["arn:aws:iam::111122223333:policy/AdministratorAccess"]
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:role/reader",
+      "name": "reader",
+      "trust_policy": {"Version": "2012-10-17", "Statement": [
+        {"Effect": "Allow",
+         "Principal": {"AWS": "arn:aws:iam::111122223333:user/courier"},
+         "Action": "sts:AssumeRole"}
+      ]},
+      "inline_policies": {
+        "read-secret": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "s3:GetObject",
+           "Resource": "arn:aws:s3:::cg-secret/*"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:role/mid",
+      "name": "mid",
+      "trust_policy": {"Version": "2012-10-17", "Statement": [
+        {"Effect": "Allow",
+         "Principal": {"AWS": "arn:aws:iam::111122223333:user/pivot"},
+         "Action": "sts:AssumeRole"}
+      ]},
+      "inline_policies": {
+        "assume-high": {"Version": "2012-10-17", "Statement": [
+          {"Effect": "Allow", "Action": "sts:AssumeRole",
+           "Resource": "arn:aws:iam::111122223333:role/high"}
+        ]}
+      }
+    },
+    {
+      "arn": "arn:aws:iam::111122223333:role/high",
+      "name": "high",
+      "trust_policy": {"Version": "2012-10-17", "Statement": [
+        {"Effect": "Allow",
+         "Principal": {"AWS": "arn:aws:iam::111122223333:role/mid"},
+         "Action": "sts:AssumeRole"}
+      ]},
+      "attached_managed_policies": ["arn:aws:iam::111122223333:policy/AdministratorAccess"]
+    }
+  ],
+
+  "resources": [
+    {"arn": "arn:aws:s3:::cg-secret", "type": "AWS::S3::Bucket",
+     "tags": {"Sensitivity": "high", "DataClass": "pii"}},
+    {"arn": "arn:aws:s3:::cg-public", "type": "AWS::S3::Bucket",
+     "tags": {"Sensitivity": "low"}}
+  ]
+}

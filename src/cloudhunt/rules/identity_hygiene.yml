@@ -1,0 +1,41 @@
+title: Root account activity
+id: iam-root-activity
+description: >
+  Fires on any action by the account root principal. Root should be locked away
+  after account setup; almost any root API call warrants review.
+  LOGIC: match principal_type == root.
+  FP TRAPS: rare break-glass procedures and a handful of tasks that still require
+  root (e.g. certain billing/account settings). Expect and document these.
+attack: T1078.004
+confidence: 0.6
+level: high
+logsource: {product: aws}
+detection:
+  selection:
+    principal_type: root
+  condition: selection
+falsepositives:
+  - Documented break-glass usage
+  - Root-only account/billing tasks
+---
+title: Sensitive write performed without MFA
+id: iam-non-mfa-sensitive-write
+description: >
+  Fires on a non-read-only action against a high-sensitivity resource where the
+  session was not MFA-authenticated. Sensitive mutations should require step-up
+  auth; their absence suggests a stolen long-term credential.
+  LOGIC: mfa == false AND resource_sensitivity == high AND read_only == false.
+  FP TRAPS: automation/service roles that legitimately run without MFA. Scope by
+  excluding known automation principals, or require MFA only for human identities.
+attack: T1078
+confidence: 0.6
+level: medium
+logsource: {product: aws}
+detection:
+  selection:
+    mfa: false
+    read_only: false
+    resource_sensitivity: high
+  condition: selection
+falsepositives:
+  - Service/automation roles that never use MFA (scope them out)

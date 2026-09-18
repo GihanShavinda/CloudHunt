@@ -1,0 +1,226 @@
+{
+  "generated_at": "2026-09-18T08:10:12.808750+00:00",
+  "summary": {
+    "scenarios_total": 7,
+    "scenarios_passed": 7,
+    "scenarios_failed": 0,
+    "overall_precision": 1.0,
+    "overall_recall": 1.0,
+    "overall_f1": 1.0,
+    "overall_fpr": 0.0,
+    "average_chain_accuracy": 0.8440833333333333,
+    "average_privesc_accuracy": 1.0,
+    "average_correlation_accuracy": 1.0,
+    "safety_violations": 0,
+    "total_runtime_ms": 118.793
+  },
+  "scenarios": [
+    {
+      "scenario": "compromised-key",
+      "passed": true,
+      "duration_ms": 14.005,
+      "detections_expected": [
+        "bhv-enumeration-burst",
+        "bhv-new-geo"
+      ],
+      "detections_actual": [
+        "bhv-enumeration-burst",
+        "bhv-new-geo"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "correlation_score": 1.0,
+      "privesc_path_score": 0.0,
+      "chain_accuracy": 1.0,
+      "blast_rank_correct": null,
+      "safety_violations": 0,
+      "notes": [],
+      "attack_ids": [
+        "T1078.004",
+        "T1580"
+      ],
+      "timing": {
+        "processing_ms": 14.012,
+        "simulated_analyst_timing": false
+      }
+    },
+    {
+      "scenario": "iam-privesc",
+      "passed": true,
+      "duration_ms": 14.487,
+      "detections_expected": [
+        "bhv-automation-iam-write"
+      ],
+      "detections_actual": [
+        "bhv-automation-iam-write",
+        "bhv-new-geo"
+      ],
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "false_positive_rate": 1.0,
+      "correlation_score": 1.0,
+      "privesc_path_score": 1.0,
+      "chain_accuracy": 1.0,
+      "blast_rank_correct": null,
+      "safety_violations": 0,
+      "notes": [
+        "computed privesc techniques: ['AssumeRole', 'AttachRolePolicy']"
+      ],
+      "attack_ids": [
+        "T1078.004",
+        "T1098"
+      ],
+      "timing": {
+        "processing_ms": 14.495,
+        "simulated_analyst_timing": false
+      }
+    },
+    {
+      "scenario": "assume-role-chain",
+      "passed": true,
+      "duration_ms": 15.908,
+      "detections_expected": [
+        "bhv-new-geo"
+      ],
+      "detections_actual": [
+        "bhv-new-geo"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "correlation_score": 1.0,
+      "privesc_path_score": 0.0,
+      "chain_accuracy": 1.0,
+      "blast_rank_correct": null,
+      "safety_violations": 0,
+      "notes": [],
+      "attack_ids": [
+        "T1078.004"
+      ],
+      "timing": {
+        "processing_ms": 15.92,
+        "simulated_analyst_timing": false
+      }
+    },
+    {
+      "scenario": "s3-exfiltration",
+      "passed": true,
+      "duration_ms": 21.898,
+      "detections_expected": [
+        "m8-s3-exfil-anomaly"
+      ],
+      "detections_actual": [
+        "bhv-new-geo",
+        "m8-s3-exfil-anomaly"
+      ],
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "false_positive_rate": 1.0,
+      "correlation_score": 1.0,
+      "privesc_path_score": 0.0,
+      "chain_accuracy": 0.0645,
+      "blast_rank_correct": null,
+      "safety_violations": 0,
+      "notes": [],
+      "attack_ids": [
+        "T1078.004",
+        "T1530",
+        "T1537"
+      ],
+      "timing": {
+        "processing_ms": 21.905,
+        "simulated_analyst_timing": false
+      }
+    },
+    {
+      "scenario": "defense-evasion",
+      "passed": true,
+      "duration_ms": 17.969,
+      "detections_expected": [
+        "ct-logging-tampering"
+      ],
+      "detections_actual": [
+        "bhv-new-geo",
+        "ct-logging-tampering"
+      ],
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "false_positive_rate": 1.0,
+      "correlation_score": 1.0,
+      "privesc_path_score": 0.0,
+      "chain_accuracy": 1.0,
+      "blast_rank_correct": null,
+      "safety_violations": 0,
+      "notes": [],
+      "attack_ids": [
+        "T1078.004",
+        "T1562.008"
+      ],
+      "timing": {
+        "processing_ms": 17.994,
+        "simulated_analyst_timing": false
+      }
+    },
+    {
+      "scenario": "trust-policy-backdoor",
+      "passed": true,
+      "duration_ms": 19.531,
+      "detections_expected": [
+        "m8-backdoor-trust-policy"
+      ],
+      "detections_actual": [
+        "bhv-automation-iam-write",
+        "bhv-new-geo",
+        "iam-backdoor-trust",
+        "m8-backdoor-trust-policy"
+      ],
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4,
+      "false_positive_rate": 1.0,
+      "correlation_score": 1.0,
+      "privesc_path_score": 0.0,
+      "chain_accuracy": 1.0,
+      "blast_rank_correct": null,
+      "safety_violations": 0,
+      "notes": [],
+      "attack_ids": [
+        "T1078.004",
+        "T1098",
+        "T1098.003"
+      ],
+      "timing": {
+        "processing_ms": 19.541,
+        "simulated_analyst_timing": false
+      }
+    },
+    {
+      "scenario": "benign-automation",
+      "passed": true,
+      "duration_ms": 13.829,
+      "detections_expected": [],
+      "detections_actual": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0,
+      "correlation_score": 1.0,
+      "privesc_path_score": 0.0,
+      "chain_accuracy": 1.0,
+      "blast_rank_correct": null,
+      "safety_violations": 0,
+      "notes": [],
+      "attack_ids": [],
+      "timing": {
+        "processing_ms": 13.835,
+        "simulated_analyst_timing": false
+      }
+    }
+  ]
+}

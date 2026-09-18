@@ -1,0 +1,23 @@
+{
+  "compromised-key": {
+    "expected_case_count_min": 1
+  },
+  "iam-privesc": {
+    "expected_case_count_min": 1
+  },
+  "assume-role-chain": {
+    "expected_case_count_min": 1
+  },
+  "s3-exfiltration": {
+    "expected_case_count_min": 1
+  },
+  "defense-evasion": {
+    "expected_case_count_min": 1
+  },
+  "trust-policy-backdoor": {
+    "expected_case_count_min": 1
+  },
+  "benign-automation": {
+    "expected_case_count_min": 0
+  }
+}

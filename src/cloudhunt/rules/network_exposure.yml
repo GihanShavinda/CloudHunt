@@ -1,0 +1,26 @@
+title: Security group opened to the entire internet (0.0.0.0/0)
+id: ec2-sg-open-world
+description: >
+  Fires when an ingress/egress authorization or SG-rule modification includes a
+  world CIDR (0.0.0.0/0 or ::/0). Broad exposure of management ports is a common
+  precursor to brute force and lateral movement.
+  LOGIC: the derived.sg_opens_world indicator is set by the engine when any CIDR
+  in the request equals a world range (deep-searched from requestParameters).
+  FP TRAPS: intentionally public services (ALB/CloudFront origins, public web
+  tiers); tightening rules that still reference 0.0.0.0/0 on a high port. Pair
+  with the port/protocol and the target SG's role.
+attack: T1562.007
+confidence: 0.8
+level: high
+logsource: {product: aws, service: ec2}
+detection:
+  selection:
+    event:
+      - AuthorizeSecurityGroupIngress
+      - AuthorizeSecurityGroupEgress
+      - ModifySecurityGroupRules
+    derived.sg_opens_world: true
+  condition: selection
+falsepositives:
+  - Deliberately public load balancers / web tiers
+  - Re-applying an existing public rule via IaC

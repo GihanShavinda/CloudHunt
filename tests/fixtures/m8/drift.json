@@ -1,0 +1,8 @@
+{
+  "principal": "arn:aws:iam::111122223333:user/alice",
+  "grants": [
+    {"actions": ["s3:GetObject"], "resources": ["arn:aws:s3:::sensitive/*"], "source": "managed:ReadData"},
+    {"actions": ["iam:CreatePolicyVersion"], "resources": ["*"], "source": "inline:legacy-admin"}
+  ],
+  "used_actions": ["s3:GetObject"]
+}

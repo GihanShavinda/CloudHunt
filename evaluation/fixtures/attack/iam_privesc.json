@@ -1,0 +1,94 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:00:00Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "pr0",
+      "readOnly": false,
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::111122223333:role/deploy"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:iam::111122223333:role/deploy"
+        }
+      ]
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:01:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "PassRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "pr1",
+      "readOnly": false,
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::111122223333:role/lambda-admin"
+      },
+      "resources": [
+        {
+          "ARN": "arn:aws:iam::111122223333:role/lambda-admin"
+        }
+      ]
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:02:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateFunction",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "pr2",
+      "readOnly": false,
+      "requestParameters": {
+        "functionName": "demo"
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "eventTime": "2026-09-18T03:03:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "InvokeFunction",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.5",
+      "userAgent": "aws-cli/2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "arn": "arn:aws:iam::111122223333:user/ci-bot",
+        "accountId": "111122223333"
+      },
+      "recipientAccountId": "111122223333",
+      "eventID": "pr3",
+      "readOnly": false,
+      "requestParameters": {
+        "functionName": "demo"
+      }
+    }
+  ]
+}
